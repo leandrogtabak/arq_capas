@@ -1,0 +1,38 @@
+<div id="contenedor">
+    <div class='container bg-light p-4 my-2 mx-auto'>
+        <h1 class='text-primary mb-4'>Información de la aplicación</h1>
+        <table class='table'>
+            <tbody>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Argumentos de entrada: </strong> {{args}}</td>
+                </tr>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Nombre de la plataforma (SO): </strong> {{process.platform}}</td>
+                </tr>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Versión de Node.js: </strong> {{process.version}}</td>
+                </tr>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Memoria total reservada (rss): </strong> {{memory}} bytes</td>
+                </tr>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Path de ejecución: </strong> {{dir}}</td>
+                </tr>
+                <tr class='table-dark align-middle'>
+                    <td><strong>Process id (PID): </strong> {{process.pid}}</td>
+                </tr>
+                {{!-- aca usar __dirname y ver como extraer solo la carpeta actual --}}
+                <tr class='table-dark align-middle'>
+                    <td><strong>Carpeta del proyecto: </strong> {{projDir}}</td>
+                </tr>
+
+
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
