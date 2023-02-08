@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include(`./partials/head`) %>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/headerLog', {current: `#`}) %>
+  </header>
+
+  <div class="jumbotron">
+    <main>
+      <h5 class="my-4">
+        <img src="/profileImg/<%= userLog.foto %>" width="50" height="50" class="rounded-circle" />
+        Bienvenido <%= userLog.username %>!
+      </h5>
+    </main>
+    <div class="d-flex flex-column justify-content-center"> <img
+        src="https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        class="img-fluid" alt="banner">
+      <img
+        src="https://images.unsplash.com/photo-1557466362-9cc33e8460ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        class="img-fluid" alt="banner">
+    </div>
+
+
+  </div>
+
+  <footer>
+    <%- include('./partials/footer') %>
+  </footer>
+</body>
+
+</html>

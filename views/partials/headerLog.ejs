@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Zulu Watches!</a>
+
+      <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+          <li class="nav-item  %> ">
+            <a class="nav-link" href="/api/productos"><b>Productos</b></a>
+          </li>
+
+          <% if(userLog.admin) { %>
+            <li class="nav-item   %> ">
+              <a class="nav-link" href="/formAddProduct">Agregar producto</a>
+            </li>
+            <% } %>
+
+              <li class="nav-item  %> ">
+                <a class="nav-link mx-4" href="/api/carrito"><img
+                    src="https://cdn-icons-png.flaticon.com/512/4903/4903482.png" height="28" width="29" /></a>
+              </li>
+
+              <li class="nav-item   %> ">
+                <a class="nav-link" href="/profile"> <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
+                    height="24" width="24" />
+                  <%= userLog.username %>
+                </a>
+              </li>
+
+              <li class="nav-item  %> ">
+                <a class="nav-link" href="/logout">Salir <img
+                    src="https://cdn-icons-png.flaticon.com/512/271/271226.png" height="20" width="20" /></a>
+              </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
