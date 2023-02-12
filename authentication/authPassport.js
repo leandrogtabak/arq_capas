@@ -76,7 +76,7 @@ const signup = () => {
           newUser.direccion = req.body.direccion;
           newUser.foto = req.file.filename;
           newUser.carrito = [];
-          newUser.admin = false; //cambiar a true para poder ingresar productos nuevos
+          newUser.admin = true; //cambiar a true para poder ingresar productos nuevos
 
           //Para cuando se registra un nuevo usuario
           const mailOptions = {

@@ -9,60 +9,49 @@
     <header>
         <%- include('./partials/headerLog', {current: `formProductos`}) %>
     </header>
-
     <div class="jumbotron">
-        <div class="jumbotron">
+        <div class="container">
             <% if (allProducts.length <=0) { %>
                 <p>No se encontraron datos.</p>
                 <% } else { %>
-                    <table class="table">
-                        <img src="https://images.unsplash.com/photo-1582994595079-d0a4d6c4772c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                            class="img-fluid" alt="banner">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Imagen</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% allProducts.forEach(product=>{ %>
-                                <tr>
-                                    <td scope="row">
-                                        <%= product.id %>
-                                    </td>
-                                    <td>
-                                        <%= product.title %>
-                                    </td>
-                                    <td>
-                                        <%= product.detail %>
-                                    </td>
-                                    <td>
-                                        $<%= product.price %>
-                                    </td>
-                                    <td>
-                                        <%= product.stock %>
-                                    </td>
-                                    <td>
-                                        <img src="<%= product.thumbnail %>" width="125" height="125">
-                                    </td>
-                                    <td>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <% allProducts.forEach(product=>{ %>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="<%= product.thumbnail %>" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">ID: <%= product.id %>
+                                        </h5>
+                                        <h5 class="card-title">
+                                            <%= product.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.detail %>
+                                        </p>
+                                        <p class="card-text"><span class="font-weight-bold">Precio:</span> $<%=
+                                                product.price %>
+                                        </p>
+                                        <p class="card-text"><span class="font-weight-bold">Stock: </span>
+                                            <%= product.stock %>
+                                        </p>
                                         <form action="/api/carrito/addProduct" method="POST">
                                             <input type="hidden" name="idUser" value=<%=userLog._id %> />
                                             <input type="hidden" name="idProduct" value=<%=product.id %> />
                                             <button class="btn btn-dark" type="submit">🤍Agregar al carrito</button>
                                         </form>
-                                    </td>
-                                </tr>
-                                <% }) %>
-                        </tbody>
-                    </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% }) %>
+
+                    </div>
+
                     <% } %>
         </div>
     </div>
+
 
     <footer>
         <%- include('./partials/footer') %>
